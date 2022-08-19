@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class MenuUIManager : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,5 +22,22 @@ public class MenuUIManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(1);
+    }
+
+
+    public void LoadLeaderboardScene()
+    {
+
+    }
+
+    public void ExitGame()
+    {
+
+#if UNITY_EDITOR
+        EditorApplication.ExitPlaymode();
+#else
+        Application.Quit();
+#endif
+        
     }
 }
