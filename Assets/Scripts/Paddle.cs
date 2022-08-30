@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Paddle : MonoBehaviour
 {
@@ -27,5 +28,11 @@ public class Paddle : MonoBehaviour
             pos.x = -MaxMovement;
 
         transform.position = pos;
+
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }
