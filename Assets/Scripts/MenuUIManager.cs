@@ -28,8 +28,7 @@ public class MenuUIManager : MonoBehaviour
     {
         if (playerNameInputField.text != null)
         {
-            Debug.Log(playerNameInputField.text);
-            MainManager.Instance.playerName = playerNameInputField.text;
+            DataManager.Instance.playerName = playerNameInputField.text;
             SceneManager.LoadScene(1);
         }
 
