@@ -22,6 +22,8 @@ public class DataManager : MonoBehaviour
 
     private void Awake()
     {
+
+        Debug.Log("Data manager instantiated!");
         if (Instance != null)
         {
             Destroy(gameObject);
@@ -70,6 +72,7 @@ public class DataManager : MonoBehaviour
 
     public void LoadAllHighestScores()
     {
+        Debug.Log("Loaded data from file at: " + Application.persistentDataPath + saveFileName);
         string filepath = Application.persistentDataPath + saveFileName;
         if (File.Exists(filepath))
         {
